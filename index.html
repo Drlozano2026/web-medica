@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jorge Alberto Lozano | Cursos de Medicina Alternativa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --azul-medico: #0056b3; --celeste: #e3f2fd; --texto: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--texto); line-height: 1.6; }
+        
+        /* Header y Navegación */
+        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: bold; color: var(--azul-medico); font-size: 1.5rem; }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--texto); font-weight: 500; }
+        .btn-zoom { background: #2D8CFF; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,86,179,0.8), rgba(0,86,179,0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80'); 
+                background-size: cover; color: white; padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; }
+
+        /* Cursos Section */
+        .container { padding: 60px 5%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .grid-cursos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--celeste); padding: 30px; border-radius: 15px; border-bottom: 5px solid var(--azul-medico); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: var(--azul-medico); margin-bottom: 20px; }
+        .card h3 { margin-top: 0; }
+        .online-badge { background: #4caf50; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; }
+
+        /* Info Tratamientos */
+        .tratamientos { background: #f9f9f9; padding: 60px 5%; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+        .tratamientos-text { flex: 1; min-width: 300px; }
+        .zoom-info { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+        footer { background: #222; color: white; text-align: center; padding: 40px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Dr. Jorge Alberto Lozano</div>
+    <nav>
+        <a href="#cursos">Cursos</a>
+        <a href="#tratamientos">Tratamientos</a>
+        <a href="https://wa.me/504TU_NUMERO" class="btn-zoom"><i class="fab fa-whatsapp"></i> Contactar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Especialista en Medicina Integrativa</h1>
+    <p>Formación profesional y tratamientos médicos avanzados en Terapia Neural, Ozonoterapia y más. 100% Online vía Zoom.</p>
+    <a href="#cursos" style="background: white; color: var(--azul-medico); padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold;">Ver Oferta Académica</a>
+</section>
+
+<div class="container" id="cursos">
+    <div class="section-title">
+        <h2>Cursos Profesionales Online</h2>
+        <p>Capacitación médica de alto nivel con certificación.</p>
+    </div>
+    <div class="grid-cursos">
+        <div class="card">
+            <i class="fas fa-syringe"></i>
+            <h3>Terapia Neural <span class="online-badge">ONLINE</span></h3>
+            <p>Aprende las bases científicas y aplicación de la terapia neural para el tratamiento del dolor crónico.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-leaf"></i>
+            <h3>Acupuntura</h3>
+            <p>Técnicas milenarias aplicadas a la medicina moderna para el equilibrio bioeléctrico.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-wind"></i>
+            <h3>Ozonoterapia</h3>
+            <p>Protocolos de aplicación de ozono medicinal en patologías inflamatorias y regenerativas.</p>
+        </div>
+        <div class="card">
+            <div class="online-badge" style="margin-bottom: 10px; display: inline-block;">Nuevo</div>
+            <i class="fas fa-band-aid"></i>
+            <h3>Neurovendaje</h3>
+            <p>Uso de vendaje neuromuscular para la recuperación funcional y alivio de tensiones.</p>
+        </div>
+    </div>
+</div>
+
+<section class="tratamientos" id="tratamientos">
+    <div class="tratamientos-text">
+        <h2>Información de Tratamientos Médicos</h2>
+        <p>El Dr. Jorge Alberto Lozano ofrece consultas y asesorías sobre tratamientos integrativos. Estos procedimientos están diseñados para pacientes que buscan alternativas efectivas para el manejo del dolor y recuperación biológica.</p>
+        <ul>
+            <li>Consultas personalizadas.</li>
+            <li>Seguimiento de casos clínicos.</li>
+            <li>Asesoría técnica para profesionales de la salud.</li>
+        </ul>
+    </div>
+    <div class="zoom-info">
+        <h3><i class="fas fa-video" style="color: #2D8CFF;"></i> Clases y Consultas por Zoom</h3>
+        <p>Todos nuestros cursos se imparten en vivo a través de Zoom, permitiendo interactividad total, sesiones de preguntas y respuestas, y análisis de casos en tiempo real desde la comodidad de su hogar o clínica.</p>
+        <p><strong>Ubicación:</strong> Honduras (Disponible para toda Iberoamérica).</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Dr. Jorge Alberto Lozano - Medicina Integrativa & Educación Médica</p>
+    <p>Diseño Web Profesional para el Sector Salud</p>
+</footer>
+
+</body>
+</html>
