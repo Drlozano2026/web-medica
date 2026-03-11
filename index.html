@@ -14,7 +14,7 @@
         /* HEADER RESPONSIVO */
         header { 
             background: white; 
-            padding: 1rem 5%; 
+            padding: 1.5rem 5%; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
@@ -23,27 +23,43 @@
             top: 0; 
             z-index: 1000; 
         }
-        .logo { font-weight: bold; color: var(--azul-medico); font-size: 1.3rem; text-align: center; margin-bottom: 10px; }
+        .logo { font-weight: bold; color: var(--azul-medico); font-size: 1.3rem; text-align: center; margin-bottom: 15px; }
         
-        nav { display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: var(--texto); font-weight: 500; font-size: 0.9rem; }
+        nav { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+        
+        /* BOTONES DE NAVEGACIÓN MEJORADOS */
+        nav a.nav-btn { 
+            text-decoration: none; 
+            color: var(--azul-medico); 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            padding: 8px 15px;
+            border: 1.5px solid var(--azul-medico);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a.nav-btn:hover {
+            background: var(--azul-medico);
+            color: white;
+        }
 
         /* BOTÓN WHATSAPP */
         .btn-whatsapp { 
             background: var(--verde-wa); 
             color: white; 
             padding: 10px 18px; 
-            border-radius: 50px; 
+            border-radius: 5px; 
             text-decoration: none; 
             font-weight: bold; 
             font-size: 0.9rem;
             display: inline-flex; 
             align-items: center; 
             gap: 8px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+            border: 1.5px solid var(--verde-wa);
         }
 
-        /* HERO SECTION ADAPTADO */
+        /* HERO SECTION */
         .hero { 
             background: linear-gradient(rgba(0,86,179,0.85), rgba(0,86,179,0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80'); 
             background-size: cover; 
@@ -62,7 +78,7 @@
 
         .grid-cursos { 
             display: grid; 
-            grid-template-columns: 1fr; /* Una columna en móvil */
+            grid-template-columns: 1fr; 
             gap: 20px; 
         }
         .card { 
@@ -70,10 +86,8 @@
             padding: 25px; 
             border-radius: 12px; 
             border-left: 6px solid var(--azul-medico);
-            transition: 0.3s;
         }
         .card i { font-size: 2rem; color: var(--azul-medico); margin-bottom: 15px; }
-        .card h3 { margin: 10px 0; font-size: 1.3rem; }
         .online-badge { background: #4caf50; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
 
         /* SECCIÓN TRATAMIENTOS */
@@ -85,23 +99,23 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
             margin-top: 30px;
             border: 1px solid #eee;
+            flex: 1;
         }
 
         footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 30px 20px; font-size: 0.85rem; }
 
-        /* MEDIA QUERIES PARA TABLET Y PC */
+        /* MEDIA QUERIES */
         @media (min-width: 768px) {
             header { flex-direction: row; justify-content: space-between; padding: 1rem 8%; }
             .logo { margin-bottom: 0; font-size: 1.5rem; }
-            nav { gap: 25px; }
+            nav { gap: 15px; }
             .hero { padding: 100px 5%; }
             .hero h1 { font-size: 3rem; }
-            .grid-cursos { grid-template-columns: repeat(2, 1fr); } /* 2 columnas en tablet */
-            .section-title h2 { font-size: 2.2rem; }
+            .grid-cursos { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (min-width: 1024px) {
-            .grid-cursos { grid-template-columns: repeat(4, 1fr); } /* 4 columnas en PC */
+            .grid-cursos { grid-template-columns: repeat(4, 1fr); }
             .tratamientos { display: flex; gap: 50px; align-items: center; max-width: 1200px; margin: auto; }
         }
     </style>
@@ -111,8 +125,8 @@
 <header>
     <div class="logo">Dr. Jorge Alberto Lozano</div>
     <nav>
-        <a href="#cursos">Cursos</a>
-        <a href="#tratamientos">Tratamientos</a>
+        <a href="#cursos" class="nav-btn">Cursos</a>
+        <a href="#tratamientos" class="nav-btn">Tratamientos</a>
         <a href="https://wa.me/50496000187?text=Hola,%20Dr.%20Lozano.%20Vi%20su%20sitio%20web%20y%20estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20cursos%20de%20medicina%20integrativa.%20Quedo%20atento%20a%20los%20detalles.%20Muchas%20gracias." class="btn-whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i> Contactar
         </a>
@@ -133,25 +147,25 @@
     
     <div class="grid-cursos">
         <div class="card">
-            <i class="fas fa-syringe"></i>
+            <i class="fas fa-syringe"></i><br>
             <span class="online-badge">ONLINE</span>
             <h3>Terapia Neural</h3>
             <p>Bases científicas y aplicación práctica para el manejo del dolor.</p>
         </div>
         <div class="card">
-            <i class="fas fa-leaf"></i>
+            <i class="fas fa-leaf"></i><br>
             <span class="online-badge">ONLINE</span>
             <h3>Acupuntura</h3>
             <p>Equilibrio bioeléctrico aplicado a la medicina contemporánea.</p>
         </div>
         <div class="card">
-            <i class="fas fa-wind"></i>
+            <i class="fas fa-wind"></i><br>
             <span class="online-badge">ONLINE</span>
             <h3>Ozonoterapia</h3>
             <p>Protocolos avanzados en patologías inflamatorias.</p>
         </div>
         <div class="card">
-            <i class="fas fa-band-aid"></i>
+            <i class="fas fa-band-aid"></i><br>
             <span class="online-badge">ONLINE</span>
             <h3>Neurovendaje</h3>
             <p>Técnicas de recuperación funcional y muscular.</p>
@@ -163,15 +177,10 @@
     <div style="flex: 1;">
         <h2>Tratamientos Médicos</h2>
         <p>Consultas personalizadas y asesoría técnica para profesionales de la salud que buscan alternativas efectivas en el manejo del dolor.</p>
-        <ul style="padding-left: 20px;">
-            <li>Seguimiento clínico vía Zoom.</li>
-            <li>Enfoque integrativo y biológico.</li>
-        </ul>
     </div>
     <div class="zoom-info">
         <h3><i class="fas fa-video" style="color: #2D8CFF;"></i> Clases por Zoom</h3>
         <p>Interactividad total en vivo, análisis de casos y resolución de dudas en tiempo real.</p>
-        <p style="font-weight: bold; color: var(--azul-medico);">Disponible para toda Iberoamérica.</p>
     </div>
 </div>
 
