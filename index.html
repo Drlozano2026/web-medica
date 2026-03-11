@@ -2,39 +2,108 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Jorge Alberto Lozano | Cursos de Medicina Integrativa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dr. Jorge Alberto Lozano | Cursos Online</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --azul-medico: #0056b3; --celeste: #e3f2fd; --texto: #333; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--texto); line-height: 1.6; }
+        :root { --azul-medico: #0056b3; --azul-oscuro: #003d80; --celeste: #f0f7ff; --texto: #333; --verde-wa: #25D366; }
         
-        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: bold; color: var(--azul-medico); font-size: 1.5rem; }
-        nav a { margin-left: 20px; text-decoration: none; color: var(--texto); font-weight: 500; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; color: var(--texto); line-height: 1.6; background-color: #fff; }
+
+        /* HEADER RESPONSIVO */
+        header { 
+            background: white; 
+            padding: 1rem 5%; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo { font-weight: bold; color: var(--azul-medico); font-size: 1.3rem; text-align: center; margin-bottom: 10px; }
         
-        /* Botón de Contacto resaltado */
-        .btn-whatsapp { background: #25D366; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-whatsapp:hover { background: #128C7E; }
+        nav { display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--texto); font-weight: 500; font-size: 0.9rem; }
 
-        .hero { background: linear-gradient(rgba(0,86,179,0.8), rgba(0,86,179,0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80'); 
-                background-size: cover; color: white; padding: 100px 5%; text-align: center; }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        /* BOTÓN WHATSAPP */
+        .btn-whatsapp { 
+            background: var(--verde-wa); 
+            color: white; 
+            padding: 10px 18px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.9rem;
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
 
-        .container { padding: 60px 5%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .grid-cursos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--celeste); padding: 30px; border-radius: 15px; border-bottom: 5px solid var(--azul-medico); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 2.5rem; color: var(--azul-medico); margin-bottom: 20px; }
-        
-        .online-badge { background: #4caf50; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        /* HERO SECTION ADAPTADO */
+        .hero { 
+            background: linear-gradient(rgba(0,86,179,0.85), rgba(0,86,179,0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80'); 
+            background-size: cover; 
+            background-position: center;
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+        }
+        .hero h1 { font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; }
+        .hero p { font-size: 1rem; margin-bottom: 25px; opacity: 0.9; }
 
-        .tratamientos { background: #f9f9f9; padding: 60px 5%; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-        .tratamientos-text { flex: 1; min-width: 300px; }
-        .zoom-info { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1; }
+        /* GRID DE CURSOS */
+        .container { padding: 40px 20px; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { color: var(--azul-medico); font-size: 1.6rem; }
 
-        footer { background: #222; color: white; text-align: center; padding: 40px; }
+        .grid-cursos { 
+            display: grid; 
+            grid-template-columns: 1fr; /* Una columna en móvil */
+            gap: 20px; 
+        }
+        .card { 
+            background: var(--celeste); 
+            padding: 25px; 
+            border-radius: 12px; 
+            border-left: 6px solid var(--azul-medico);
+            transition: 0.3s;
+        }
+        .card i { font-size: 2rem; color: var(--azul-medico); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; font-size: 1.3rem; }
+        .online-badge { background: #4caf50; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
+
+        /* SECCIÓN TRATAMIENTOS */
+        .tratamientos { background: #fdfdfd; padding: 40px 20px; }
+        .zoom-info { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            margin-top: 30px;
+            border: 1px solid #eee;
+        }
+
+        footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 30px 20px; font-size: 0.85rem; }
+
+        /* MEDIA QUERIES PARA TABLET Y PC */
+        @media (min-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; padding: 1rem 8%; }
+            .logo { margin-bottom: 0; font-size: 1.5rem; }
+            nav { gap: 25px; }
+            .hero { padding: 100px 5%; }
+            .hero h1 { font-size: 3rem; }
+            .grid-cursos { grid-template-columns: repeat(2, 1fr); } /* 2 columnas en tablet */
+            .section-title h2 { font-size: 2.2rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-cursos { grid-template-columns: repeat(4, 1fr); } /* 4 columnas en PC */
+            .tratamientos { display: flex; gap: 50px; align-items: center; max-width: 1200px; margin: auto; }
+        }
     </style>
 </head>
 <body>
@@ -51,64 +120,63 @@
 </header>
 
 <section class="hero">
-    <h1>Especialista en Medicina Integrativa</h1>
-    <p>Formación profesional y tratamientos médicos avanzados. Cursos 100% Online vía Zoom.</p>
-    <a href="#cursos" style="background: white; color: var(--azul-medico); padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold;">Ver Oferta Académica</a>
+    <h1>Medicina Integrativa y Educación Médica</h1>
+    <p>Capacitación profesional de alto nivel 100% Online vía Zoom.</p>
+    <a href="#cursos" style="background: white; color: var(--azul-medico); padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block;">Ver Cursos</a>
 </section>
 
 <div class="container" id="cursos">
     <div class="section-title">
-        <h2>Cursos Profesionales Disponibles</h2>
-        <p>Capacitación médica de alto nivel con modalidad virtual.</p>
+        <h2>Cursos Profesionales</h2>
+        <span class="online-badge" style="background: var(--azul-medico);">MODALIDAD VIRTUAL</span>
     </div>
+    
     <div class="grid-cursos">
         <div class="card">
-            <span class="online-badge">ONLINE</span><br>
             <i class="fas fa-syringe"></i>
+            <span class="online-badge">ONLINE</span>
             <h3>Terapia Neural</h3>
-            <p>Aprende las bases científicas y aplicación de la terapia neural para el tratamiento del dolor crónico.</p>
+            <p>Bases científicas y aplicación práctica para el manejo del dolor.</p>
         </div>
         <div class="card">
-            <span class="online-badge">ONLINE</span><br>
             <i class="fas fa-leaf"></i>
+            <span class="online-badge">ONLINE</span>
             <h3>Acupuntura</h3>
-            <p>Técnicas milenarias aplicadas a la medicina moderna para el equilibrio bioeléctrico.</p>
+            <p>Equilibrio bioeléctrico aplicado a la medicina contemporánea.</p>
         </div>
         <div class="card">
-            <span class="online-badge">ONLINE</span><br>
             <i class="fas fa-wind"></i>
+            <span class="online-badge">ONLINE</span>
             <h3>Ozonoterapia</h3>
-            <p>Protocolos de aplicación de ozono medicinal en patologías inflamatorias y regenerativas.</p>
+            <p>Protocolos avanzados en patologías inflamatorias.</p>
         </div>
         <div class="card">
-            <span class="online-badge">ONLINE</span><br>
             <i class="fas fa-band-aid"></i>
+            <span class="online-badge">ONLINE</span>
             <h3>Neurovendaje</h3>
-            <p>Uso de vendaje neuromuscular para la recuperación funcional y alivio de tensiones.</p>
+            <p>Técnicas de recuperación funcional y muscular.</p>
         </div>
     </div>
 </div>
 
-<section class="tratamientos" id="tratamientos">
-    <div class="tratamientos-text">
-        <h2>Información de Tratamientos Médicos</h2>
-        <p>El Dr. Jorge Alberto Lozano ofrece consultas y asesorías sobre tratamientos integrativos avanzados. Estos procedimientos están diseñados para pacientes que buscan alternativas efectivas.</p>
-        <ul>
-            <li>Consultas personalizadas online.</li>
-            <li>Seguimiento de casos clínicos vía Zoom.</li>
-            <li>Asesoría técnica para profesionales de la salud.</li>
+<div class="tratamientos" id="tratamientos">
+    <div style="flex: 1;">
+        <h2>Tratamientos Médicos</h2>
+        <p>Consultas personalizadas y asesoría técnica para profesionales de la salud que buscan alternativas efectivas en el manejo del dolor.</p>
+        <ul style="padding-left: 20px;">
+            <li>Seguimiento clínico vía Zoom.</li>
+            <li>Enfoque integrativo y biológico.</li>
         </ul>
-        <a href="https://wa.me/50499999999?text=Hola,%20Dr.%20Lozano.%20Deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20tratamientos%20m%C3%A9dicos." style="color: var(--azul-medico); font-weight: bold;">Solicitar consulta médica →</a>
     </div>
     <div class="zoom-info">
-        <h3><i class="fas fa-video" style="color: #2D8CFF;"></i> Clases y Consultas por Zoom</h3>
-        <p>Todos nuestros cursos se imparten en vivo a través de Zoom, permitiendo interactividad total en tiempo real.</p>
-        <p><strong>Disponibilidad:</strong> Global (Cursos en español).</p>
+        <h3><i class="fas fa-video" style="color: #2D8CFF;"></i> Clases por Zoom</h3>
+        <p>Interactividad total en vivo, análisis de casos y resolución de dudas en tiempo real.</p>
+        <p style="font-weight: bold; color: var(--azul-medico);">Disponible para toda Iberoamérica.</p>
     </div>
-</section>
+</div>
 
 <footer>
-    <p>&copy; 2026 Dr. Jorge Alberto Lozano - Medicina Integrativa & Educación Médica</p>
+    <p>&copy; 2026 Dr. Jorge Alberto Lozano<br>Especialista en Medicina Natural</p>
 </footer>
 
 </body>
